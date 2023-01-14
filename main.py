@@ -151,11 +151,11 @@ lecturer_2.courses_attached += ['Git']
 lecturer_list = [lecturer_1, lecturer_2]
 
 # Создание экземпляра класса Эксперт:
-cool_reviewer = Reviewer('Anton', 'Green')
+cool_reviewer = Reviewer('Ivan', 'Gyer')
 cool_reviewer.courses_attached += ['Python']
 
 # Создание экземпляра класса Эксперт2:
-cool_reviewer_2 = Reviewer('Eddy', 'Grey')
+cool_reviewer_2 = Reviewer('Elisey', 'Zezalov')
 cool_reviewer_2.courses_attached += ['Git']
 
 # Проверяем
