@@ -32,14 +32,12 @@ class Student:
             return None
 
 
-# Класс преподавателей
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
 
 
-# Класс лекторов
 class Lecturer(Mentor):
     def __init__(self, name, surname):
         super().__init__(name, surname)
@@ -57,7 +55,6 @@ class Lecturer(Mentor):
             return None
 
 
-# Класс экспертов
 class Reviewer(Mentor):
     def __init__(self, name, surname):
         super().__init__(name, surname)
@@ -67,7 +64,6 @@ class Reviewer(Mentor):
         output = f'Имя: {self.name}\nФамилия: {self.surname}'
         return output
 
-    # Метод класса оценки студентов
     def rate_hw(self, specific_student, course, grade):
         if isinstance(specific_student, Student) \
                 and course in self.courses_attached \
@@ -81,7 +77,7 @@ class Reviewer(Mentor):
             return 'Ошибка'
 
 
-# Функция расчета среднего значения оценок:
+# Расчет среднего значения оценок:
 def average_grade(all_grades):
     if type(all_grades) is dict:
         amount_grades = []
@@ -96,7 +92,7 @@ def average_grade(all_grades):
         return "Ошибка! Оценки храняться не в словаре и не в списке, или список состоит из вложенных списков"
 
 
-# Функция расчета среднего значения оценок:
+# Расчет среднего значения оценок:
 def average_course_grade(all_students, current_course):
     all_course_grades = []
     for current_student in all_students:
@@ -108,7 +104,7 @@ def average_course_grade(all_students, current_course):
     return average_grade(all_course_grades)
 
 
-# Функция расчета среднего значения оценок:
+# Расчет среднего значения оценок:
 def average_lecturers_grade(all_lecturers):
     all_lecturers_grades = []
     for current_lecturer in all_lecturers:
@@ -117,7 +113,7 @@ def average_lecturers_grade(all_lecturers):
     return average_grade(all_lecturers_grades)
 
 
-# Создание экземпляра класса студент1:
+# Экземпляр класса студент 1:
 student_no_1 = Student('Roy', 'Eman', '25')
 student_no_1.courses_in_progress += ['Python']
 student_no_1.courses_in_progress += ['English for IT']
@@ -126,22 +122,22 @@ student_no_1.add_courses('Math')
 student_no_1.grades['Git'] = [7, 2, 6]
 student_no_1.grades['Python'] = [10, 10, 8, 10, 10, 10]
 student_no_1.grades['English for IT'] = [10, 10]
-# Создание экземпляра класса студент2:
+# Экземпляр класса класса студент 2:
 student_no_2 = Student('Mike', 'Red', '45')
 student_no_2.courses_in_progress += ['Python']
 student_no_2.finished_courses += ['Git']
 student_no_2.grades['Git'] = [9, 5, 2]
 student_no_2.grades['Python'] = [8, 10]
-# Допустим мы их храним в списке (для функции average_course_grade):
+
 student_list = [student_no_1, student_no_2]
 
-# Создание экземпляра класса лектор1:
+# Экземпляр класса класса лектор 1:
 lecturer_1 = Lecturer('Bill', 'Boops')
 lecturer_1.courses_attached += ['Python']
 lecturer_1.courses_attached += ['English for IT']
 lecturer_1.courses_attached += ['Git']
 
-# Создание экземпляра класса лектор2:
+# Экземпляр класса класса лектор 2:
 lecturer_2 = Lecturer('Ray', 'Bitts')
 lecturer_2.courses_attached += ['Python']
 lecturer_2.courses_attached += ['English for IT']
@@ -150,15 +146,14 @@ lecturer_2.courses_attached += ['Git']
 # Допустим мы их храним в списке (для функции average_lecturers_grade):
 lecturer_list = [lecturer_1, lecturer_2]
 
-# Создание экземпляра класса Эксперт:
+# Экземпляр класса класса Эксперт:
 cool_reviewer = Reviewer('Ivan', 'Gyer')
 cool_reviewer.courses_attached += ['Python']
 
-# Создание экземпляра класса Эксперт2:
+# Экземпляр класса класса Эксперт2:
 cool_reviewer_2 = Reviewer('Elisey', 'Zezalov')
 cool_reviewer_2.courses_attached += ['Git']
 
-# Проверяем
 
 print('*****Результат проверки работы функций добавления оценок*****')
 # Сценарий №1 Эксперт проставляет оценки студену:
